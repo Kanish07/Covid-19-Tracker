@@ -1,0 +1,11 @@
+body {
+    background-color: #161625;
+}
+
+.bg-theme {
+    background-color: #161625;
+    color: white;
+}
+.navbar {
+    min-height: 100px;
+}
