@@ -14,6 +14,8 @@ ReactDOM.render(
         <br />
         <br />
         <br />
+        <br />
+        <br />
         <App />
         <Footerpart></Footerpart>
     </React.StrictMode>,
