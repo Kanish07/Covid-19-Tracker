@@ -15,6 +15,7 @@ ReactDOM.render(
         <br />
         <br />
         <br />
+        <Jumbo></Jumbo>
         <App />
         <Footerpart></Footerpart>
     </React.StrictMode>,
