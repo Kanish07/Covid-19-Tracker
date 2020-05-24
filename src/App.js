@@ -8,6 +8,8 @@ import CardDeck from 'react-bootstrap/CardDeck';
 import Form from 'react-bootstrap/Form';
 import Columns from 'react-columns';
 import Spinner from 'react-bootstrap/Spinner';
+import ReactGA from 'react-ga';
+import NumberFormat from 'react-number-format';
 
 import Axios from 'axios';
 import { CardBody, CardTitle, CardText, Button } from 'reactstrap';
@@ -34,6 +36,9 @@ function App() {
     };
 
     useEffect(() => {
+        ReactGA.initialize('UA-167494753-1');
+        ReactGA.pageview('/');
+
         fetchapi();
     }, []);
 
@@ -60,6 +65,14 @@ function App() {
         capitalizeFirstLetter(a);
     };
 
+    const HandleSearch = () => {
+        ReactGA.event({
+            category: 'Search Bar',
+            action: 'Clicked on search bar',
+            label: 'HOME_PAGE',
+        });
+    };
+
     const filterCountry = country.filter((item) => {
         return search !== '' ? item.country.includes(search) : item;
     });
@@ -78,25 +91,60 @@ function App() {
                             <h1 className="display-5">{data.country}</h1>
                         </CardTitle>
                         <CardText className="h4">
-                            Total Cases : {data.cases}
+                            Total Cases :{' '}
+                            <NumberFormat
+                                value={data.cases}
+                                displayType={'text'}
+                                thousandSeparator={true}
+                            />
                         </CardText>
                         <CardText className="h4">
-                            Total Recovered : {data.recovered}
+                            Total Recovered :{' '}
+                            <NumberFormat
+                                value={data.recovered}
+                                displayType={'text'}
+                                thousandSeparator={true}
+                            />
                         </CardText>
                         <CardText className="h4">
-                            Total Deceased : {data.deaths}
+                            Total Deceased :{' '}
+                            <NumberFormat
+                                value={data.deaths}
+                                displayType={'text'}
+                                thousandSeparator={true}
+                            />
                         </CardText>
                         <CardText className="h4">
-                            Active Cases : {data.active}
+                            Active Cases :{' '}
+                            <NumberFormat
+                                value={data.active}
+                                displayType={'text'}
+                                thousandSeparator={true}
+                            />
                         </CardText>
                         <CardText className="h4">
-                            Today's Cases : {data.todayCases}
+                            Today's Cases :{' '}
+                            <NumberFormat
+                                value={data.todayCases}
+                                displayType={'text'}
+                                thousandSeparator={true}
+                            />
                         </CardText>
                         <CardText className="h4">
-                            Today's Death : {data.todayDeaths}
+                            Today's Death :{' '}
+                            <NumberFormat
+                                value={data.todayDeaths}
+                                displayType={'text'}
+                                thousandSeparator={true}
+                            />
                         </CardText>
                         <CardText className="h4">
-                            Critical : {data.critical}
+                            Critical :{' '}
+                            <NumberFormat
+                                value={data.critical}
+                                displayType={'text'}
+                                thousandSeparator={true}
+                            />
                         </CardText>
                     </CardBody>
                 </Card>
@@ -122,9 +170,19 @@ function App() {
                             <Card.Text className="h3">
                                 {loading ? (
                                     <Fragment>
-                                        {details.cases}
+                                        <NumberFormat
+                                            value={details.cases}
+                                            displayType={'text'}
+                                            thousandSeparator={true}
+                                        />
                                         <br />
-                                        [+{details.todayCases}]
+                                        [+
+                                        <NumberFormat
+                                            value={details.todayCases}
+                                            displayType={'text'}
+                                            thousandSeparator={true}
+                                        />
+                                        ]
                                     </Fragment>
                                 ) : (
                                     <Fragment>
@@ -161,7 +219,13 @@ function App() {
                             </Card.Title>
                             <Card.Text className="h3">
                                 {loading ? (
-                                    <Fragment>{details.recovered}</Fragment>
+                                    <Fragment>
+                                        <NumberFormat
+                                            value={details.recovered}
+                                            displayType={'text'}
+                                            thousandSeparator={true}
+                                        />
+                                    </Fragment>
                                 ) : (
                                     <Spinner
                                         animation="grow"
@@ -196,9 +260,19 @@ function App() {
                             <Card.Text className="h3">
                                 {loading ? (
                                     <Fragment>
-                                        {details.deaths}
+                                        <NumberFormat
+                                            value={details.deaths}
+                                            displayType={'text'}
+                                            thousandSeparator={true}
+                                        />
                                         <br />
-                                        [+{details.todayDeaths}]
+                                        [+
+                                        <NumberFormat
+                                            value={details.todayDeaths}
+                                            displayType={'text'}
+                                            thousandSeparator={true}
+                                        />
+                                        ]
                                     </Fragment>
                                 ) : (
                                     <Spinner
@@ -239,6 +313,7 @@ function App() {
                             type="text"
                             placeholder="Search for a country..."
                             onChange={handleChange}
+                            onClick={HandleSearch}
                         />
                     </Form.Group>
                     <span style={{ fontSize: '18px', color: '#535C68' }}>
