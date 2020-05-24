@@ -7,7 +7,7 @@ export default function Jumbo() {
         <div className="container-fluid">
             <Jumbotron fluid className="bg-theme">
                 <Container>
-                    <h1>About</h1>
+                    <h1>About me</h1>
                     <h4>
                         I am a volunteer doing my part in the fight against the
                         coronavirus. I would love it if my application helps in
