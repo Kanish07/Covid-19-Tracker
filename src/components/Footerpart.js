@@ -18,6 +18,9 @@ export default function Footerpart() {
                         <a href="https://www.who.int/emergencies/diseases/novel-coronavirus-2019/advice-for-public">
                             WHO
                         </a>
+                        <br />
+                        API Provider :{' '}
+                        <a id="link">https://corona.lmao.ninja/</a>
                     </Card.Text>
                     <a
                         className="btn btn-dark text-white"

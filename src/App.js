@@ -10,7 +10,7 @@ import Columns from 'react-columns';
 import Spinner from 'react-bootstrap/Spinner';
 
 import Axios from 'axios';
-import { CardBody, CardTitle, CardText } from 'reactstrap';
+import { CardBody, CardTitle, CardText, Button } from 'reactstrap';
 
 function App() {
     const [details, setDetails] = useState([]);
@@ -137,7 +137,18 @@ function App() {
                                 )}
                             </Card.Text>
                         </Card.Body>
-                        <Card.Footer>Last updated {d}</Card.Footer>
+                        <Card.Footer>
+                            Last updated :{' '}
+                            {loading ? (
+                                <Fragment>{d}</Fragment>
+                            ) : (
+                                <Spinner
+                                    animation="grow"
+                                    style={{ textAlign: 'center' }}
+                                    className="spinner-grow-sm text-white"
+                                />
+                            )}
+                        </Card.Footer>
                     </Card>
                     <Card
                         bg="success"
@@ -161,7 +172,16 @@ function App() {
                             </Card.Text>
                         </Card.Body>
                         <Card.Footer className="h7">
-                            Last updated {d}
+                            Last updated :{' '}
+                            {loading ? (
+                                <Fragment>{d}</Fragment>
+                            ) : (
+                                <Spinner
+                                    animation="grow"
+                                    style={{ textAlign: 'center' }}
+                                    className="spinner-grow-sm text-white"
+                                />
+                            )}
                         </Card.Footer>
                     </Card>
                     <Card
@@ -189,25 +209,41 @@ function App() {
                                 )}
                             </Card.Text>
                         </Card.Body>
-                        <Card.Footer>Last updated {d}</Card.Footer>
+                        <Card.Footer>
+                            Last updated :{' '}
+                            {loading ? (
+                                <Fragment>{d}</Fragment>
+                            ) : (
+                                <Spinner
+                                    animation="grow"
+                                    style={{ textAlign: 'center' }}
+                                    className="spinner-grow-sm text-white"
+                                />
+                            )}
+                        </Card.Footer>
                     </Card>
                 </CardDeck>
                 <br />
                 <p className="container h2">
                     Country Wise Case Details : <br />
                 </p>
-                <Form className="container">
+                <Form
+                    className="container"
+                    onSubmit={(e) => {
+                        e.preventDefault();
+                    }}
+                >
                     <Form.Group>
                         <Form.Control
-                            className="bg-dark text-white"
+                            className="bg-light text-dark"
                             type="text"
                             placeholder="Search for a country..."
                             onChange={handleChange}
                         />
                     </Form.Group>
                     <span style={{ fontSize: '18px', color: '#535C68' }}>
-                        *(Use USA, UAE, UK and Korea instead of full name of
-                        these countries)
+                        *(Use USA, UAE, UK, DRC and Korea instead of full name
+                        of these countries)
                     </span>
                 </Form>
             </div>

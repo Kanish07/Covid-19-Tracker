@@ -19,30 +19,31 @@ export default function NavbarMenu() {
                         src={corona}
                         width="30"
                         height="30"
-                        className="d-inline-block align-top"
+                        className="d-inline-block align-top rounded-circle"
                         alt="logo"
                     />
-                    Covid-19 World Tracker
+                    Covid-19 Update
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="mr-auto">
+                        <br />
                         <NavLink
                             href="#home"
-                            className="mr-auto text-white"
+                            className="btn btn-outline-dark mx-2 my-2 my-lg-0 text-white"
                             style={{ fontSize: '20px' }}
                         >
                             Home
                         </NavLink>
                         <NavLink
                             href="#footer"
-                            className="mr-auto text-white"
+                            className="btn btn-outline-dark mx-2 my-2 my-lg-0 text-white"
                             style={{ fontSize: '20px' }}
                         >
                             About
                         </NavLink>
                         <NavLink
-                            className="mr-auto text-white"
+                            className="btn btn-outline-dark mx-2 my-2 my-lg-0 text-white"
                             style={{ fontSize: '20px' }}
                             href="https://www.instagram.com/kanishkar_bubeshkumar_07/"
                         >

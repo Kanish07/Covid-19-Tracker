@@ -1,6 +1,6 @@
 {
-    "short_name": "Covid-19 World Tracker",
-    "name": "Web site created using React by Kanishkar Bubeshkumar",
+    "short_name": "Covid-19 Update",
+    "name": "Covid-19 Update App created by Kanishkar Bubeshkumar",
     "icons": [
         {
             "src": "favicon.ico",
@@ -20,6 +20,6 @@
     ],
     "start_url": ".",
     "display": "standalone",
-    "theme_color": "#000000",
-    "background_color": "#25CCF7"
+    "theme_color": "#ffffff",
+    "background_color": "#161625"
 }
