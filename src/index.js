@@ -4,14 +4,13 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import NavbarMenu from './components/NavbarMenu';
-import Jumbo from './components/Jumbo';
 import Footerpart from './components/Footerpart';
 
 ReactDOM.render(
     <React.StrictMode>
+        <br />
+        <br />
         <NavbarMenu></NavbarMenu>
-        <br />
-        <br />
         <br />
         <br />
         <br />
