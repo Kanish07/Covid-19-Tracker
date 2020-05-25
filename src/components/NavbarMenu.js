@@ -42,13 +42,6 @@ export default function NavbarMenu() {
                         >
                             About
                         </NavLink>
-                        <NavLink
-                            className="btn btn-outline-dark mx-2 my-2 my-lg-0 text-white"
-                            style={{ fontSize: '20px' }}
-                            href="https://www.instagram.com/kanishkar_bubeshkumar_07/"
-                        >
-                            Created by Kanishkar Bubeshkumar
-                        </NavLink>
                     </Nav>
                 </Navbar.Collapse>
             </Navbar>
