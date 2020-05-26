@@ -6,6 +6,7 @@ import '../App.css';
 import Card from 'react-bootstrap/Card';
 import CardDeck from 'react-bootstrap/CardDeck';
 import Form from 'react-bootstrap/Form';
+import Alert from 'react-bootstrap/Alert';
 import Columns from 'react-columns';
 import Spinner from 'react-bootstrap/Spinner';
 import ReactGA from 'react-ga';
@@ -162,6 +163,11 @@ function Home() {
             <br></br>
             <div>
                 <div className="container text-white">
+                    <Alert variant="danger">
+                        Check out the NEWS tab for latest updates!{' '}
+                        <small>(New addition v1.5)</small>
+                    </Alert>
+
                     <h1 className="text-center">COVID-19 Live Status</h1>
                     <br />
                     <CardDeck>
