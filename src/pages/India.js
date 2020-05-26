@@ -6,6 +6,7 @@ import { CardBody, CardText, CardLink } from 'reactstrap';
 import Card from 'react-bootstrap/Card';
 import Columns from 'react-columns';
 import Spinner from 'react-bootstrap/Spinner';
+import ReactGA from 'react-ga';
 
 export default function India() {
     const [data, setData] = useState([]);
@@ -25,6 +26,8 @@ export default function India() {
     };
 
     useEffect(() => {
+        ReactGA.initialize('UA-167494753-1');
+        ReactGA.pageview('/news');
         getdata();
     }, []);
 
