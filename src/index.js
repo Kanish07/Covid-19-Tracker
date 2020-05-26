@@ -3,20 +3,10 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import NavbarMenu from './components/NavbarMenu';
-import Footerpart from './components/Footerpart';
 
 ReactDOM.render(
     <React.StrictMode>
-        <br />
-        <br />
-        <NavbarMenu></NavbarMenu>
-        <br />
-        <br />
-        <br />
-        <br />
         <App />
-        <Footerpart></Footerpart>
     </React.StrictMode>,
     document.getElementById('root')
 );

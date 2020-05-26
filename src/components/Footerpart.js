@@ -20,7 +20,9 @@ export default function Footerpart() {
                         </a>
                         <br />
                         API Provider :{' '}
-                        <a id="link">https://corona.lmao.ninja/</a>
+                        <a id="link" href="https://corona.lmao.ninja/">
+                            https://corona.lmao.ninja/
+                        </a>
                     </Card.Text>
                     <a
                         className="btn btn-dark text-white"

@@ -1,8 +1,8 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Navbar, Nav } from 'react-bootstrap';
-import { NavLink } from 'reactstrap';
 import corona from '../image/corona.jpg';
+import { Link } from 'react-router-dom';
 
 export default function NavbarMenu() {
     return (
@@ -28,20 +28,21 @@ export default function NavbarMenu() {
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="mr-auto">
                         <br />
-                        <NavLink
-                            href="#home"
+                        <Link
+                            to="/"
                             className="btn btn-outline-dark mx-2 my-2 my-lg-0 text-white"
                             style={{ fontSize: '20px' }}
                         >
                             Home
-                        </NavLink>
-                        <NavLink
-                            href="#footer"
+                        </Link>
+
+                        <Link
+                            to="/news"
                             className="btn btn-outline-dark mx-2 my-2 my-lg-0 text-white"
                             style={{ fontSize: '20px' }}
                         >
-                            About
-                        </NavLink>
+                            News
+                        </Link>
                     </Nav>
                 </Navbar.Collapse>
             </Navbar>
